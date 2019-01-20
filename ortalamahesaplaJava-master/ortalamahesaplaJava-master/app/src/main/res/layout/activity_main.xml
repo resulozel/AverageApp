@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+
+    tools:context=".MainActivity">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false">
+
+        <AutoCompleteTextView
+            android:id="@+id/etDersAd"
+            android:layout_width="0dp"
+            android:layout_height="46dp"
+            android:ems="10"
+            android:popupBackground="@android:color/white"
+            android:hint="Ders Adı Yazınız"
+            android:inputType="textPersonName"
+            android:textColor="@android:color/black"
+            android:textColorHint="@android:color/black"
+            android:backgroundTint="@android:color/transparent"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/btnDersEkle"
+            app:layout_constraintEnd_toEndOf="@+id/spnNot"
+            app:layout_constraintStart_toStartOf="@+id/spnKredi"
+            app:layout_constraintTop_toTopOf="@+id/btnDersEkle" />
+
+        <Spinner
+            android:id="@+id/spnNot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="21dp"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="@android:color/black"
+            android:popupBackground="@android:color/white"
+            android:entries="@array/tumNotlar"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnDersEkle"
+            app:layout_constraintTop_toBottomOf="@+id/etDersAd">
+
+        </Spinner>
+
+        <Spinner
+            android:id="@+id/spnKredi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:entries="@array/krediler"
+            android:backgroundTint="@android:color/black"
+            android:popupBackground="@android:color/white"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etDersAd">
+
+        </Spinner>
+
+        <Button
+            android:id="@+id/btnDersEkle"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="28dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/btnadd"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@android:color/black" />
+
+    <ScrollView
+        android:id="@+id/scrollayout"
+        android:layout_width="match_parent"
+        android:layout_height="400dp">
+
+        <LinearLayout
+            android:id="@+id/rootLayout"
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:orientation="vertical">
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btnHesapla"
+        android:layout_width="wrap_content"
+        android:layout_height="34dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/hesapla_btn"
+        android:onClick="ortalamaHesapla" />
+
+
+</LinearLayout>
